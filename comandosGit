@@ -1,12 +1,12 @@
 git init = iniciar
 git add . = añade los elementos 
 git reset . = des añade los elementos
-git commit  = hace la foto
+git commit -m "nombre"  = hace la foto
 git checkout -- . = devuelve a la ultima foto 
 git log =  los listados de los comits
-git commit --amend
+git commit --amend = renombrar nombre de git
 git checkout -b rama-heroes
 git checkout master
 git branch -d rama-heroes
 git push
-git commit -am
+git commit -am ""
