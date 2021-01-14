@@ -2,7 +2,6 @@
 import 'package:app_construccion_agil/src/bloc/provider.dart';
 import 'package:app_construccion_agil/src/pages/HomePage.dart';
 import 'package:flutter/material.dart';
-//import 'app_contruccion_agil/src/bloc/provider.dart';
 import "package:app_construccion_agil/src/Providers/usuario_provider.dart";
 import "package:app_construccion_agil/src/Utils/Utils.dart";
 import 'package:app_construccion_agil/src/Models/Usuario_model.dart';
@@ -39,14 +38,9 @@ class RegistroPage extends StatelessWidget {
    final fondoMorado = Container(
    height: size.height * 1.0,
    width: double.infinity,
+   decoration: BoxDecoration ( color: Colors.orange
 
-   decoration: BoxDecoration(
-     gradient: LinearGradient(colors:
-     <Color> [
-       Colors.orange,
-       Colors.orange[200]
-     ])
-   ),
+   ) ,
    );   
 
     final circulo = Container (
@@ -73,7 +67,7 @@ class RegistroPage extends StatelessWidget {
           SizedBox(height: 10 , width: double.infinity,),
           Text("Construcción Ágil", style: TextStyle(color : Colors.white, fontSize: 20)
           ),
-          Text("Registro", style: TextStyle(color : Colors.white, fontSize: 20)),
+          Text("Correo y Contraseña", style: TextStyle(color : Colors.white, fontSize: 20)),
 
           ]
      )
@@ -111,7 +105,7 @@ class RegistroPage extends StatelessWidget {
            borderRadius: BorderRadius.circular(7.0)
          ),
          child: Column(children: <Widget>[
-           Text("Datos de la empresa" , style: TextStyle(fontSize:20 ),),
+           Text("Confirmar Datos" , style: TextStyle(fontSize:20 ),),
            SizedBox(height: 40.0,), 
 
          _crearEmail( bloc ),
@@ -145,7 +139,7 @@ class RegistroPage extends StatelessWidget {
        decoration: InputDecoration(
          icon: Icon(Icons.alternate_email , color : colorAzul),
          hintText: "ejemplo@correo.com",
-         labelText: "Correo Electronico",
+         labelText: "Confirmar Correo",
          //counterText: snapshot.data,
          errorText: snapshot.error
        ),
@@ -171,7 +165,7 @@ class RegistroPage extends StatelessWidget {
 
        decoration: InputDecoration(
          icon: Icon(Icons.lock_outline , color : colorAzul),
-         labelText: "Contraseña",
+         labelText: " Crear Contraseña",
          //counterText: snapshot.data,
          errorText: snapshot.error
        ),

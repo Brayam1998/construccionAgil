@@ -2,6 +2,7 @@ import 'package:app_construccion_agil/src/bloc/provider.dart';
 import 'package:app_construccion_agil/src/pages/Datos_page.dart';
 import 'package:app_construccion_agil/src/pages/HomePage.dart';
 import 'package:app_construccion_agil/src/pages/Productos_page.dart';
+import 'package:app_construccion_agil/src/pages/cuenta_inicial_page.dart';
 import 'package:app_construccion_agil/src/pages/list_Productos_page.dart';
 import 'package:app_construccion_agil/src/pages/config_cuenta.dart';
 import 'package:app_construccion_agil/src/pages/config_zona.dart';
@@ -44,7 +45,8 @@ class MyApp extends StatelessWidget {
          "cuenta"    : (BuildContext context) => CuentaPage(),
          "producto" : (BuildContext context) => ProductosPage(),
          "productosEdit" : (BuildContext context) => ProductosEditPage(),
-         "registro"  : (BuildContext context) => RegistroPage()
+         "registro"  : (BuildContext context) => RegistroPage(),
+         "cuentaInicial" : (BuildContext context) => CuentaInicialPage()
       },
       theme: ThemeData(
           primaryColor: Color.fromRGBO(4, 50, 60, 1)

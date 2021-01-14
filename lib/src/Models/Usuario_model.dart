@@ -29,7 +29,7 @@ class ModeloDeUsuario {
     int telefono;
     int zona;
     String direccion;
-    int id;
+    String id;
 
     factory ModeloDeUsuario.fromJson(Map<String, dynamic> json) => new ModeloDeUsuario(
         email: json["Email"],

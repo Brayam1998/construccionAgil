@@ -34,16 +34,8 @@ class LoginPage extends StatelessWidget {
  final fondoMorado = Container(
   height: size.height * 0.48,
   width: double.infinity,
-
-  decoration: BoxDecoration(
-   gradient: LinearGradient(colors:
-    <Color> [
-      Color.fromRGBO(18, 51, 59, 1.0),
-      Color.fromRGBO(13, 97, 115, 1.0)
-     ]
-     )
-   ),
-  );   
+   decoration: BoxDecoration(color: Colors.orange),
+   );   
 
     final circulo = Container (
       width: 100.0,
@@ -115,7 +107,7 @@ class LoginPage extends StatelessWidget {
          ],
          ),
        ),
-        FlatButton(onPressed: ()=> Navigator.pushReplacementNamed(context, "registro") ,
+        FlatButton(onPressed: ()=> Navigator.pushReplacementNamed(context, "cuentaInicial") ,
          child: Text("Crear Cuenta"))
      ],
          
@@ -130,7 +122,7 @@ class LoginPage extends StatelessWidget {
     builder: (BuildContext context, AsyncSnapshot snapshot){
       
       return Container(
-     padding: EdgeInsets.symmetric(horizontal : 20.0) ,
+     padding: EdgeInsets.symmetric(horizontal  : 20.0) ,
      child: TextField(
        keyboardType: TextInputType.emailAddress,
        decoration: InputDecoration(

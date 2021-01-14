@@ -24,6 +24,28 @@ class CuentaProvider{
    return true;
   }
  
+
+   //LISTA PARA RENDERIZAR LOS PRODUCTOS DE LA BASE DEDATOS EN LA PAGINA DE LISTADO DE PRODUCTOS.
+ Future <List<ModeloDeUsuario>> cargarUsuario()async{
+ // almacenamosla direccion en donde tenemos los datos en tipo json
+ final url = "$_url/Provedores.json";
+ // vamos a realizar la peticion get
+ final resp = await http.get(url);
+ final  Map<String,dynamic> decodedData = json.decode(resp.body);
+ final List<ModeloDeUsuario> usuarios = new List();
+
+ if (decodedData == null) return [];
+ 
+ decodedData.forEach( (id , user){
+  
+
+   final userTemp = ModeloDeUsuario.fromJson(user);
+   userTemp.id = id;
+   usuarios.add(userTemp);
+ });
+ return usuarios;
+  }
+
    /* Future<bool> editarProducto(ModeloDeProductos producto) async{
 
    final url = "$_url/productos/${producto.id}.json?auth=${_prefs.token}";
@@ -36,27 +58,9 @@ class CuentaProvider{
    return true;
   }
 
-  //LISTA PARA RENDERIZAR LOS PRODUCTOS DE LA BASE DEDATOS EN LA PAGINA DE LISTADO DE PRODUCTOS.
- Future <List<ModeloDeProductos>> cargarProductos()async{
- // almacenamosla direccion en donde tenemos los datos en tipo json
- final url = "$_url/productos.json?auth=${_prefs.token}";
- // vamos a realizar la peticion get
- final resp = await http.get(url);
- final  Map<String,dynamic> decodedData = json.decode(resp.body);
- final List<ModeloDeProductos> productos = new List();
+   /* 
 
- if (decodedData == null) return [];
- 
- decodedData.forEach( (id , prod){
-  
-
-   final prodTemp = ModeloDeProductos.fromJson(prod);
-   prodTemp.id = id;
-   productos.add(prodTemp);
- });
- return productos;
-
- }
+ }*/
    
 
    // metodo para borrar productos:
