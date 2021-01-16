@@ -10,13 +10,14 @@ import "package:app_construccion_agil/src/preferenciasUsuario/preferencias_usuar
 class ProductosProvider{
 
  final String _url = "https://construccion-agil-default-rtdb.firebaseio.com";
+ final String _construccionAgilnodo = "https://construccionagil-4c8f1-default-rtdb.firebaseio.com/Provedores/-MQjx4zHhliMJWoWhOKL";
  final _prefs = new PreferenciasUsuario();
 
  Future<bool> crearProducto(ModeloDeProductos producto) async{
 
 
-   final url = "$_url/productos.json?auth=${_prefs.token}";
-   
+   //final url = "$_url/productos.json?auth=${_prefs.token}";
+   final url = "$_construccionAgilnodo/productos.json";
    final resp = await http.post(url, body: modeloDeProductosToJson(producto));
 
    final decodedData = json.decode(resp.body);
@@ -40,9 +41,10 @@ class ProductosProvider{
   //LISTA PARA RENDERIZAR LOS PRODUCTOS DE LA BASE DEDATOS EN LA PAGINA DE LISTADO DE PRODUCTOS.
  Future <List<ModeloDeProductos>> cargarProductos()async{
  // almacenamosla direccion en donde tenemos los datos en tipo json
- final url = "$_url/productos.json?auth=${_prefs.token}";
+ //final url = "$_url/productos.json?auth=${_prefs.token}";
+ final url = "$_construccionAgilnodo/productos.json";
  // vamos a realizar la peticion get
- final resp = await http.get(url);
+ final resp = await http.get(url) ;
  final  Map<String,dynamic> decodedData = json.decode(resp.body);
  final List<ModeloDeProductos> productos = new List();
 
